@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\DB;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +17,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+//$user = DB::select("select * from users where email = ?", ['ashishrana288@gmail.com']);
+//$user = DB::table('users')->get();
+//$user = DB::table('users')->where('name', 'Lavi R')->first();
+//$user = User::where('id', 1)->get(); 
+/*
+$user = DB::table('users')->insert([
+  'name' => 'Lavi Rana',
+  'email' => 'lavi@gmail.com',
+  'password' => 'password',
+]);
+*/
+
+//$user = DB::table('users')->where('id', 2)->update(['name' => 'Lavi R']);
+//dd($user);
 });
 
 Route::get('/dashboard', function () {
