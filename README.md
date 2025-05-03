@@ -1,39 +1,39 @@
-This course covers how to create a new Laravel project and understand routes and Blade templates. You'll learn to set up authentication using Laravel Breeze, work with migrations, run raw SQL queries, and use the query builder and Eloquent ORM. It also explains accessors and mutators, image storage, and caching.
+This project covers creating a new Laravel application and working with routes and Blade templates. It includes setting up authentication using Laravel Breeze, working with migrations, running raw SQL queries, using the query builder and Eloquent ORM. It also includes accessors, mutators, image storage, and caching.
 
-You'll build a Help Ticket project where you create and store tickets with file uploads, update and delete models, use Laravel notifications, and manage relationships like "has many." The course also guides you through deploying your project using MezoHub.
+The main feature is a Help Ticket system where users can create and store tickets with file uploads, update and delete models, use Laravel notifications, and manage "has many" relationships. The project also includes deployment using MezoHub.
 
-Topics include:
+I have pushed the full project to Git for reference.
 
-Creating a Laravel 10 project
+Key features include:
 
-Routes and Blade basics
+Laravel 10 project setup
 
-Composer JSON overview
+Routes and Blade usage
+
+Composer JSON structure
 
 Authentication with Laravel Breeze
 
-Migrations and how registration works
+Migrations and registration handling
 
-MVC pattern explanation
+MVC pattern implementation
 
 Raw SQL queries and query builder
 
 Eloquent ORM, accessors, and mutators
 
-Config, caching, and user avatars
+Config management, caching, and user avatars
 
-Mass assignment, method spoofing, and CSRF
+Mass assignment, method spoofing, and CSRF protection
 
-Form requests, image storage, and Storage facade
+Form request handling, image upload, and storage
 
-AI integration with OpenAI for avatars
+AI avatar generation using OpenAI
 
 GitHub login integration
 
-Building the Help Ticket project from scratch
+Help Ticket system: full CRUD and relationships
 
-Working with resource routes, controllers, and views
-
-Model binding, notifications, and relationships
+Laravel notifications
 
 Deployment using MezoHub
