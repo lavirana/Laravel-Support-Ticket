@@ -6,10 +6,13 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
-        "guzzlehttp/guzzle": "^7.2",
+        "guzzlehttp/guzzle": "*",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
-        "laravel/tinker": "^2.8"
+        "laravel/socialite": "^5.20",
+        "laravel/tinker": "^2.8",
+        "openai-php/client": "*",
+        "openai-php/laravel": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

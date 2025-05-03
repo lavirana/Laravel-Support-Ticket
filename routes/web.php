@@ -5,6 +5,10 @@ use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Profile\AvatarController;
+use OpenAI\Laravel\Facades\OpenAI;
+use Laravel\Socialite\Facades\Socialite;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,3 +51,30 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+
+
+Route::get('/openai', function (){    
+$result = OpenAI::images()->create([
+    'prompt' => 'A futuristic cityscape at sunset',
+    'n' => 1,
+    'size' => '256x256',
+]);
+dd($result);
+});
+
+
+Route::post('/auth/redirect', function () {
+    return Socialite::driver('github')->redirect();
+})->name('login.github');
+
+Route::get('/auth/callback', function () {
+    $user = Socialite::driver('github')->user();
+    $user = User::firstOrCreate(['email' => $user->email],[
+'name' => $user->name,
+'avatar' => $user->avatar,
+'password' => 'password',
+]);
+    Auth::login($user);
+    return redirect('/dashboard');
+});
