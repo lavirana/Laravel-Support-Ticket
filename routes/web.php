@@ -5,6 +5,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Profile\AvatarController;
+use App\Http\Controllers\TicketController;
 use OpenAI\Laravel\Facades\OpenAI;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -77,4 +78,10 @@ Route::get('/auth/callback', function () {
 ]);
     Auth::login($user);
     return redirect('/dashboard');
+});
+
+Route::middleware('auth')->group(function() {
+       //Route::get('/ticket/create', [TicketController::class, 'create'])->name('ticket.create');
+        //Route::post('/ticket/create', [TicketController::class, 'store'])->name('tickek.store');  
+        Route::resource('/ticket',TicketController::class);
 });

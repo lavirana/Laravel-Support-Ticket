@@ -18,6 +18,12 @@
                 </div>
             </div>
 
+            <div class="flex flex-col justify-center" style="    margin-left: auto;">
+                <a href="{{ route('ticket.create') }}" class="ml-3">
+                    Support Ticket
+                </a>
+            </div>
+
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
