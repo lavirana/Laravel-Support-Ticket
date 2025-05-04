@@ -19,7 +19,7 @@
             </div>
 
             <div class="flex flex-col justify-center" style="    margin-left: auto;">
-                <a href="{{ route('ticket.create') }}" class="ml-3">
+                <a href="{{ route('ticket.index') }}" class="ml-3">
                     Support Ticket
                 </a>
             </div>

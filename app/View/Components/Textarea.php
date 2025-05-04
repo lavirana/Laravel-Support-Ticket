@@ -13,7 +13,7 @@ class Textarea extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct($value)
+    public function __construct(string $value = '')
     {
         $this->value = $value;
     }
