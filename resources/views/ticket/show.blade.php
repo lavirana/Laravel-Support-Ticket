@@ -26,10 +26,28 @@
             </form>
        
         </div>
-        <div class="flex" >
-        <x-primary-button>Approve</x-primary-button>
-        <x-primary-button class="ml-3">Reject</x-primary-button>
-        </div>
+        @if(auth()->user()->isAdmin)
+                <div class="flex" >
+                    <form action="{{ route('ticket.update', $ticket->id) }}" method="post" >
+                    @method('patch')
+                    @csrf
+                    <input type="hidden" name="status" value="approved" />
+                    <x-primary-button>Approve</x-primary-button>
+                    </form>
+               
+
+                    <form action="{{ route('ticket.update', $ticket->id) }}" method="post" >
+                    @method('patch')
+                    @csrf
+                    <input type="hidden" name="status" value="rejected" />
+                    <x-primary-button class="ml-3">Reject</x-primary-button>
+                    </form>
+                
+                </div>
+        @else
+        <p>Ticket Status : {{ $ticket->status }}</p>
+
+        @endif
         </div>
         </div>
     </div>
